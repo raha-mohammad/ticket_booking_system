@@ -1,3 +1,29 @@
 spring:
   application:
     name: ticket_booking_system
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate # dont create tables and dont modify tables, just check whether my java entities match the database
+    show-sql: true
+
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
+
